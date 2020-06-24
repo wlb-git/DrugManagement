@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdqn.Mapper.DrugMapper">
+	<select id="findDrugType" resultType="com.bdqn.pojo.DrugClassification">
+		select * from `hospital`.`h_drug_type`
+	</select>
+	<insert id="addDrugType" parameterType="com.bdqn.pojo.DrugClassification">
+			INSERT INTO `hospital`.`h_drug_type`(`fictionType`, `note`) VALUES ( #{fictionType}, #{note})
+	</insert>
+</mapper>
