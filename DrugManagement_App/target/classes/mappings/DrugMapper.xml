@@ -9,4 +9,5 @@
 	<insert id="addDrugType" parameterType="com.bdqn.pojo.DrugClassification">
 			INSERT INTO `hospital`.`h_drug_type`(`fictionType`, `note`) VALUES ( #{fictionType}, #{note})
 	</insert>
+	<!--  -->
 </mapper>
