@@ -13,6 +13,11 @@ import com.bdqn.Server.SupplyServer;
 import com.bdqn.pojo.DrugClassification;
 import com.bdqn.pojo.Supply;
 
+/**
+ * 
+ * @author WangJian
+ *
+ */
 @Controller
 public class TestContorller {
 
