@@ -4,7 +4,7 @@ import com.bdqn.pojo.Supply;
 
 public interface SupplyMapper {
 	/**
-	 *  @author WangJian01
+	 *  @author WangJian010——
 	 * */
 	public int addSupply(Supply supply);
 	
