@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @MapperScan(basePackages= {"com.bdqn.Mapper"})
 public class DrugManagementAppApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(DrugManagementAppApplication.class, args);
 	}

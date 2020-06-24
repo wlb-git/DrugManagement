@@ -9,10 +9,15 @@ package com.bdqn.pojo;
 
 public class Supply {
 
+	@Override
+	public String toString() {
+		return "Supply [supplyid=" + supplyid + ", suplyName=" + suplyName + ", reliability=" + reliability + ", note="
+				+ note + "]";
+	}
 	private Integer supplyid;//货源id
 	private String  suplyName;//货源名称
 	private Integer reliability;//货源可信度
-	private Integer note;//备注
+	private String note;//备注
 	public Integer getSupplyid() {
 		return supplyid;
 	}
@@ -31,10 +36,10 @@ public class Supply {
 	public void setReliability(Integer reliability) {
 		this.reliability = reliability;
 	}
-	public Integer getNote() {
+	public String getNote() {
 		return note;
 	}
-	public void setNote(Integer note) {
+	public void setNote(String note) {
 		this.note = note;
 	}
 }

@@ -162,7 +162,7 @@ CodeMirror.defineMode("tiddlywiki", function () {
         return ret('brace', 'brace');
       }
     }
-    if (ch == "@") {    // check for space link. TODO fix @MavenProject: com.bdqn:DrugManagement_App:0.0.1-SNAPSHOT @ E:\\Git\\Git\\DrugManagement\\DrugManagement_App\\pom.xml@ highlighting
+    if (ch == "@") {    // check for space link. TODO fix @MavenProject: com.bdqn:DrugManagement_App:0.0.1-SNAPSHOT @ E:\\wlbproject_618\\DrugManagement\\DrugManagement_App\\pom.xml@ highlighting
       stream.eatWhile(isSpaceName);
       return ret("link", "link");
     }

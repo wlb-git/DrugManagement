@@ -1,113 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>增加药品类型</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
 
-	<head>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet"/>
+<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet"/>
+<link href="css/plugins/iCheck/custom.css" rel="stylesheet"/>
+<link href="css/animate.css" rel="stylesheet"/>
+<link href="css/style.css?v=4.1.0" rel="stylesheet"/>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-		<title>增加药品类型</title>
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-
-		<link rel="shortcut icon" href="favicon.ico">
-		<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-		<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
-		<link href="css/plugins/iCheck/custom.css" rel="stylesheet">
-		<link href="css/animate.css" rel="stylesheet">
-		<link href="css/style.css?v=4.1.0" rel="stylesheet">
-
-	</head>
-
-	<body class="gray-bg">
-		<div class="wrapper wrapper-content animated fadeInRight">
-			<div class="row">
-				<div class="col-sm-7">
-					<div class="ibox float-e-margins">
-
-					</div>
-				</div>
-
+<body class="gray-bg">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+			<div class="col-sm-7">
+				<div class="ibox float-e-margins"></div>
 			</div>
 
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="ibox float-e-margins">
-						<div class="ibox-title">
-							<h5>增加药品类型 <small>Add the supply of goods</small></h5>
-							<div class="ibox-tools">
-								<a class="collapse-link">
-									<i class="fa fa-chevron-up"></i>
-								</a>
-								<a class="dropdown-toggle" data-toggle="dropdown" href="form_basic.html#">
-									<i class="fa fa-wrench"></i>
-								</a>
-								<ul class="dropdown-menu dropdown-user">
-									<li>
-										<a href="form_basic.html#">选项1</a>
-									</li>
-									<li>
-										<a href="form_basic.html#">选项2</a>
-									</li>
-								</ul>
-								<a class="close-link">
-									<i class="fa fa-times"></i>
-								</a>
-							</div>
-						</div>
-						<div class="ibox-content">
-							<form method="get" class="	form-horizontal">
-								<div class="form-group">
-									<label class="col-sm-2 control-label">类型名称</label>
+		</div>
 
-									<div class="col-sm-10">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="hr-line-dashed"></div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">备注</label>
-									<div class="col-sm-10">
-										<textarea name="" class="" placeholder="200字以内"></textarea>
-									</div>
-								</div>
-
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>
+							增加药品类型 <small>Add the supply of goods</small>
+						</h5>
+						<div class="ibox-tools">
+							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+							</a> <a class="dropdown-toggle" data-toggle="dropdown"
+								href="form_basic.html#"> <i class="fa fa-wrench"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-user">
+								<li><a href="form_basic.html#">选项1</a></li>
+								<li><a href="form_basic.html#">选项2</a></li>
+							</ul>
+							<a class="close-link"> <i class="fa fa-times"></i>
+							</a>
 						</div>
-						<div class="hr-line-dashed"></div>
-						<div class="form-group">
-							<div class="col-sm-4 col-sm-offset-2">
-								<button class="btn btn-primary" type="submit">确认添加此类型</button>
-								<button class="btn btn-white" type="submit">取消</button>
-							</div>
-						</div>
-						</form>
 					</div>
+					<div class="ibox-content">
+						<form th:method="post" class="form-horizontal" th:action="@{/addDrugType}">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">类型名称</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="fictionType"/>
+								</div>
+							</div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">备注</label>
+								<div class="col-sm-10">
+									<textarea class="" placeholder="200字以内"  name="note"></textarea>
+								</div>
+							</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<div class="col-sm-4 col-sm-offset-2">
+							<button class="btn btn-primary" type="submit">确认添加此类型</button>
+							<button class="btn btn-white" type="submit">取消</button>
+						</div>
+					</div>
+					</form>
 				</div>
 			</div>
 		</div>
-		</div>
+	</div>
+	</div>
 
-		<!-- 全局js -->
-		<script src="js/jquery.min.js?v=2.1.4"></script>
-		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+	<!-- 全局js -->
+	<script src="js/jquery.min.js?v=2.1.4"></script>
+	<script src="js/bootstrap.min.js?v=3.3.6"></script>
 
-		<!-- 自定义js -->
-		<script src="js/content.js?v=1.0.0"></script>
+	<!-- 自定义js -->
+	<script src="js/content.js?v=1.0.0"></script>
 
-		<!-- iCheck -->
-		<script src="js/plugins/iCheck/icheck.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				$('.i-checks').iCheck({
-					checkboxClass: 'icheckbox_square-green',
-					radioClass: 'iradio_square-green',
-				});
+	<!-- iCheck -->
+	<script src="js/plugins/iCheck/icheck.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.i-checks').iCheck({
+				checkboxClass : 'icheckbox_square-green',
+				radioClass : 'iradio_square-green',
 			});
-		</script>
+		});
+	</script>
 
-		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-		<!--统计代码，可删除-->
+	<script type="text/javascript"
+		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+	<!--统计代码，可删除-->
 
-	</body>
+</body>
 
 </html>

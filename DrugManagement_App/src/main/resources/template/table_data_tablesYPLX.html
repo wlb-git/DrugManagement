@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>药品类型</title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
 
-		<title>供应商</title>
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-
-		<link rel="shortcut icon" href="favicon.ico">
-		<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-		<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet"/>
+		<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet"/>
 
 		<!-- Data Tables -->
-		<link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+		<link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 
-		<link href="css/animate.css" rel="stylesheet">
-		<link href="css/style.css?v=4.1.0" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet"/>
+		<link href="css/style.css?v=4.1.0" rel="stylesheet"/>
 
 	</head>
 
@@ -61,10 +59,10 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr class="gradeX">
+									<tr class="gradeX" th:each="findtype:${findtype}">
 										<td hidden="hidden">id</td>
-										<td>Trident</td>
-										<td>Win 95+</td>
+										<td th:text="${findtype.fictionType}"></td>
+										<td th:text="${findtype.note}"></td>
 										<td>
 											<a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">删除</a>
 											&nbsp;
