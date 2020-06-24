@@ -6,5 +6,5 @@
 	<insert id="addSupply" parameterType="com.bdqn.pojo.Supply">
 		INSERT INTO `hospital`.`h_supply`(`note`, `reliability`, `suplyName`) VALUES (#{note}, #{reliability},#{suplyName})
 	</insert>
-<!--  -->
+<!-- 0 -->
 </mapper>

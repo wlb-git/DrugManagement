@@ -10,7 +10,7 @@ import com.bdqn.pojo.Supply;
 @Service
 public class SupplyImpl implements SupplyServer {
 	/**
-	 *  @author WangJian1
+	 *  @author WangJian01
 	 */
 	@Resource
 	private SupplyMapper mapper;
