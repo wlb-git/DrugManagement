@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdqn.Mapper.DrugshowMapper">
+<select id="DrugList" resultType="com.bdqn.pojo.Drug">
+SELECT
+	u.*,
+	h.fictionType,t.`shipTime`,k.`sockTime`,
+	a.`scokPeopleName`,b.`shipPeopleName`,p.`suplyName`
+FROM
+	h_drug u,
+	h_drug_type h,
+       `h_shipment` t,
+       `h_sock` k,
+       `h_supply` p,
+       `sockpeople` a,
+       `shippeople` b
+WHERE
+	u.`drugType` = h.fictionId 
+         AND 
+         u.`drugDeliveryrecord`=t.`ship_id`
+         AND 
+         u.`drugPurchaserecord`=k.`sock_id`
+         AND 
+         t.`shipPeopleId`=b.`shipPeopleId`
+         AND 
+         k.`sockPeopleId`=a.`sockPeopleId`
+         AND
+         p.`supplyid`=u.`supplyid`
+</select>
+</mapper>
