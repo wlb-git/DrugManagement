@@ -17,7 +17,7 @@ public class DrugClassification {
 	}
 	public void setFictionId(Integer fictionId) {
 		this.fictionId = fictionId;
-	}
+	}	
 	public String getFictionType() {
 		return fictionType;
 	}

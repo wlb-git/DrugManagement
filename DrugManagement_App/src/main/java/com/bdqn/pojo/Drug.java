@@ -20,11 +20,28 @@ public class Drug {
 	private Integer Pharmaceutical;//药品冻结
 	private Integer Supplyid;//货源
 	private String note;//备注
-	public Integer getId() {
+	private String fictionType;//
+	private String shipTime;
+	private String sockTime;
+	
+	
+	public String getShipTime() {
+		return shipTime;
+	}
+	public void setShipTime(String shipTime) {
+		this.shipTime = shipTime;
+	}
+	public String getSockTime() {
+		return sockTime;
+	}
+	public void setSockTime(String sockTime) {
+		this.sockTime = sockTime;
+	}
+	public Integer getDrugid() {
 		return drugid;
 	}
-	public void setId(Integer id) {
-		this.drugid = id;
+	public void setDrugid(Integer drugid) {
+		this.drugid = drugid;
 	}
 	public String getDrugPrice() {
 		return drugPrice;
@@ -74,11 +91,11 @@ public class Drug {
 	public void setPharmaceutical(Integer pharmaceutical) {
 		Pharmaceutical = pharmaceutical;
 	}
-	public Integer getSupply() {
+	public Integer getSupplyid() {
 		return Supplyid;
 	}
-	public void setSupply(Integer supply) {
-		Supplyid= supply;
+	public void setSupplyid(Integer supplyid) {
+		Supplyid = supplyid;
 	}
 	public String getNote() {
 		return note;
@@ -86,4 +103,37 @@ public class Drug {
 	public void setNote(String note) {
 		this.note = note;
 	}
+
+	
+	public String getFictionType() {
+		return fictionType;
+	}
+	public void setFictionType(String fictionType) {
+		this.fictionType = fictionType;
+	}
+	public Drug () {}
+	public Drug(Integer drugid, String drugPrice, String drugName, Integer drugType, Date drugShelflife,
+			Integer drugDeliveryrecord, Integer drugCount, Integer drugPurchaserecord, Integer pharmaceutical,
+			Integer supplyid, String note, String fictionType) {
+		super();
+		this.drugid = drugid;
+		this.drugPrice = drugPrice;
+		this.drugName = drugName;
+		this.drugType = drugType;
+		this.drugShelflife = drugShelflife;
+		this.drugDeliveryrecord = drugDeliveryrecord;
+		this.drugCount = drugCount;
+		this.drugPurchaserecord = drugPurchaserecord;
+		this.Pharmaceutical = pharmaceutical;
+		this.Supplyid = supplyid;
+		this.note = note;
+		this.fictionType = fictionType;
+	}
+	
+	
+	
+	
+	
+	
+
 }

@@ -3,6 +3,9 @@ package com.bdqn.Mapper;
 
 public interface PruMapper {
 	/**
-	 * 王亮斌
+	 * 用户管理系统
 	 */
+	
+	
+	
 }
