@@ -7,11 +7,12 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.bdqn.Mapper.DrugMapper;
+import com.bdqn.pojo.Drug;
 import com.bdqn.pojo.DrugClassification;
 
 /**
  * 
- * @author WangJian010——0
+ * @author WangJian01X
  *
  */
 @Service
@@ -35,6 +36,36 @@ public class DrugImpl implements DrugServer {
 	public int addDrugType(DrugClassification drug) {
 		// TODO Auto-generated method stub
 		return mapper.addDrugType(drug);
+	}
+
+	@Override
+	public int deleteDrugType(int fictionId) {
+		// TODO Auto-generated method stub
+		return mapper.deleteDrugType(fictionId);
+	}
+
+	@Override
+	public Drug findById(int drugid) {
+		// TODO Auto-generated method stub
+		return mapper.findById(drugid);
+	}
+
+	@Override
+	public int dongJie(Drug drug) {
+		// TODO Auto-generated method stub
+		return mapper.dongJie(drug);
+	}
+
+	@Override
+	public int jieDong(Drug drug) {
+		// TODO Auto-generated method stub
+		return mapper.jieDong(drug);
+	}
+
+	@Override
+	public int findByIdPr(int drugid) {
+		// TODO Auto-generated method stub
+		return mapper.findByIdPr(drugid);
 	}
 
 	

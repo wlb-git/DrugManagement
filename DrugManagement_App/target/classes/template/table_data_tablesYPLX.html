@@ -1,113 +1,106 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>药品类型</title>
-		<meta name="keywords" content=""/>
-		<meta name="description" content=""/>
+<title>药品类型</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
 
-		<link rel="shortcut icon" href="favicon.ico"/>
-		<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet"/>
-		<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet"/>
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet" />
+<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet" />
 
-		<!-- Data Tables -->
-		<link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
+<!-- Data Tables -->
+<link href="css/plugins/dataTables/dataTables.bootstrap.css"
+	rel="stylesheet" />
 
-		<link href="css/animate.css" rel="stylesheet"/>
-		<link href="css/style.css?v=4.1.0" rel="stylesheet"/>
+<link href="css/animate.css" rel="stylesheet" />
+<link href="css/style.css?v=4.1.0" rel="stylesheet" />
 
-	</head>
+</head>
 
-	<body class="gray-bg">
-		<div class="wrapper wrapper-content animated fadeInRight">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="ibox float-e-margins">
-						<div class="ibox-title">
-							<h5>药品类型 <small>分类，查找</small></h5>
-							<div class="ibox-tools">
-								<a class="collapse-link">
-									<i class="fa fa-chevron-up"></i>
-								</a>
-								<a class="dropdown-toggle" data-toggle="dropdown" href="table_data_tables.html#">
-									<i class="fa fa-wrench"></i>
-								</a>
-								<ul class="dropdown-menu dropdown-user">
-									<li>
-										<a href="table_data_tables.html#">选项1</a>
-									</li>
-									<li>
-										<a href="table_data_tables.html#">选项2</a>
-									</li>
-								</ul>
-								<a class="close-link">
-									<i class="fa fa-times"></i>
-								</a>
-							</div>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>
+							药品类型 <small>分类，查找</small>
+						</h5>
+						<div class="ibox-tools">
+							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+							</a> <a class="dropdown-toggle" data-toggle="dropdown"
+								href="table_data_tables.html#"> <i class="fa fa-wrench"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-user">
+								<li><a href="table_data_tables.html#">选项1</a></li>
+								<li><a href="table_data_tables.html#">选项2</a></li>
+							</ul>
+							<a class="close-link"> <i class="fa fa-times"></i>
+							</a>
 						</div>
-						<div class="ibox-content">
+					</div>
+					<div class="ibox-content">
 
-							<table class="table table-striped table-bordered table-hover dataTables-example">
-								<thead>
-									<tr>
-										<th hidden="hidden">id</th>
-										<th>药品类型</th>
-										<th>备注</th>
-										<th>操作</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="gradeX" th:each="findtype:${findtype}">
-										<td hidden="hidden">id</td>
-										<td th:text="${findtype.fictionType}"></td>
-										<td th:text="${findtype.note}"></td>
-										<td>
-											<a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">删除</a>
-											&nbsp;
-											<a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">编辑</a>
-											&nbsp;
-											</td>
-									</tr>
+						<table
+							class="table table-striped table-bordered table-hover dataTables-example">
+							<thead>
+								<tr>
+									<th hidden="hidden">id</th>
+									<th>药品类型</th>
+									<th>备注</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="gradeX" th:each="findtype:${findtype}">
+									<td hidden="hidden">id</td>
+									<td th:text="${findtype.fictionType}"></td>
+									<td th:text="${findtype.note}"></td>
+									<td>
+									<a th:tag="${findtype.fictionId}" class="btn btn-primary"  href="">删除</a>
+										&nbsp; <a onclick="update();" href="javascript:;"
+										class="btn btn-primary">编辑</a> &nbsp;</td>
+									<!-- th:href="@{/deleteDrugType(fictionId=${findtype.fictionId})}" -->
+								</tr>
+							</tbody>
+							<tfoot>
 
-								</tbody>
-								<tfoot>
-									<tr>
-										<th hidden="hidden">id</th>
-										<th>药品类型</th>
-										<th>备注</th>
-										<th>操作</th>
-									</tr>
-								</tfoot>
-							</table>
+								<tr>
+									<th hidden="hidden">id</th>
+									<th>药品类型</th>
+									<th>备注</th>
+									<th>操作</th>
+								</tr>
+							</tfoot>
+						</table>
 
-						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-12">
-
-				</div>
-			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12"></div>
+		</div>
+	</div>
 
-		<!-- 全局js -->
-		<script src="js/jquery.min.js?v=2.1.4"></script>
-		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+	<!-- 全局js -->
+	<script src="js/jquery.min.js?v=2.1.4"></script>
+	<script src="js/bootstrap.min.js?v=3.3.6"></script>
+	<script type="text/javascript" th:inline="javascript"></script>
+	<script src="js/plugins/jeditable/jquery.jeditable.js"></script>
+	<!-- Data Tables -->
+	<script src="js/plugins/dataTables/jquery.dataTables.js"></script>
+	<script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
-		<script src="js/plugins/jeditable/jquery.jeditable.js"></script>
+	<!-- 自定义js -->
+	<script src="js/content.js?v=1.0.0"></script>
 
-		<!-- Data Tables -->
-		<script src="js/plugins/dataTables/jquery.dataTables.js"></script>
-		<script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
-
-		<!-- 自定义js -->
-		<script src="js/content.js?v=1.0.0"></script>
-
-		<!-- Page-Level Scripts -->
-		<script>
+	<!-- Page-Level Scripts -->
+	<script>
 			$(document).ready(function() {
 				$('.dataTables-example').dataTable();
 
@@ -130,9 +123,7 @@
 					"width": "90%",
 					"height": "100%"
 				});
-
-			});
-
+				
 			function fnClickAddRow() {
 				$('#editable').dataTable().fnAddData([
 					"Custom row",
@@ -141,13 +132,36 @@
 					"New row",
 					"New row"
 				]);
-
 			}
 		</script>
-
-		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-		<!--统计代码，可删除-->
-
-	</body>
+			<script src="/js/jquery-1.8.3.js"></script>
+			<script type="text/javascript">
+			 $("a").click(function () {
+	             if($(this).text()=="删除"){
+	                 var bool=confirm("确认删除药品吗?");
+	                 if(bool){
+	                    $.ajax({
+	                        url:"/deleteDrugType",
+	                        dataType:"json",
+	                        async:true,
+	                        data:{"fictionId":$(this).attr("tag")},
+	                        type:"POST",
+	                        success:function (req) {
+	                                if(req.code==1){
+	                                  alert(req.msg);
+	                                  location.href="/findDrugType";
+	                             }else{
+	                                 alert(req.msg);
+	                             }
+	                        },
+	                        error:function (msg) {
+	                            console.log(msg);
+	                        }
+	                    });
+	                 }
+	             }
+	        })
+			</script>
+</body>
 
 </html>

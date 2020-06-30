@@ -3,11 +3,42 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bdqn.Mapper.DrugMapper">
-	<select id="findDrugType" resultType="com.bdqn.pojo.DrugClassification">
+	<select id="findDrugType"
+		resultType="com.bdqn.pojo.DrugClassification">
 		select * from `hospital`.`h_drug_type`
 	</select>
-	<insert id="addDrugType" parameterType="com.bdqn.pojo.DrugClassification">
-			INSERT INTO `hospital`.`h_drug_type`(`fictionType`, `note`) VALUES ( #{fictionType}, #{note})
+	<insert id="addDrugType"
+		parameterType="com.bdqn.pojo.DrugClassification">
+		INSERT INTO `hospital`.`h_drug_type`(`fictionType`,
+		`note`) VALUES (
+		#{fictionType}, #{note})
 	</insert>
+	<delete id="deleteDrugType" parameterType="int">
+		delete from
+		`hospital`.`h_drug_type` where fictionId = #{fictionId}
+	</delete>
 	<!-- 0 -->
+	<select id="findById" parameterType="int"
+		resultType="com.bdqn.pojo.Drug">
+		select
+		`h_drug`.`drugid`,`h_drug`.`drugName`,`h_drug`.`note` from `h_drug`
+		where drugid = #{drugid}
+	</select>
+	<update id="dongJie" parameterType="com.bdqn.pojo.Drug">
+		UPDATE `hospital`.`h_drug`
+		SET `pharmaceutical` = 2,
+		`note` = #{note}
+		WHERE
+		`drugid` = #{drugid}
+	</update>
+	<update id="jieDong" parameterType="com.bdqn.pojo.Drug">
+		UPDATE `hospital`.`h_drug`
+		SET `pharmaceutical` = 1,
+		`note` = #{note}
+		WHERE
+		`drugid` = #{drugid}
+	</update>
+	<select id="findByIdPr" parameterType="int" resultType="int">
+		select pharmaceutical from `hospital`.`h_drug` where `drugid` = #{drugid}
+	</select>
 </mapper>
